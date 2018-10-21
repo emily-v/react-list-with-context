@@ -1,7 +1,21 @@
 const getState = scope => {
 	return {
 		store: {
-			demo: [
+			listOfItems: [
+				{
+					itemText: "Item 1",
+					isDone: false
+				},
+				{
+					itemText: "Item 2",
+					isDone: false
+				},
+				{
+					itemText: "Item 3",
+					isDone: false
+				}
+			]
+			/*demo: [
 				{
 					title: "FIRST",
 					background: "white",
@@ -12,14 +26,22 @@ const getState = scope => {
 					background: "white",
 					initial: "white"
 				}
-			]
+			]*/
 		},
 		actions: {
-			changeColor: (element, color) => {
+			addToDo: item => {
+				let store = scope.state.store;
+				store.listOfItems.push({
+					itemText: item,
+					isDone: false
+				});
+				scope.setState({ store });
+			}
+			/*changeColor: (element, color) => {
 				let store = scope.state.store;
 				store.demo[element].background = color;
 				scope.setState({ store });
-			}
+			}*/
 		}
 	};
 };
