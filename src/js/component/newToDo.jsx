@@ -11,14 +11,20 @@ export class NewToDo extends React.Component {
 		return (
 			<Context.Consumer>
 				{({ store, actions }) => {
-					// create function variable to handle all actions on submit
-					let handleSubmit = e => {
+					// create function variable to handle all actions on submit, or put all inside element
+					/*let handleSubmit = e => {
 						e.preventDefault();
 						actions.addToDo(this.newItem.current.value);
 						this.newItem.current.value = ""; // clear input field on submit
-					};
+					};*/
 					return (
-						<form onSubmit={handleSubmit}>
+						<form
+							onSubmit={e => {
+								// handleSubmit (wouldn't need arrow function)
+								e.preventDefault();
+								actions.addToDo(this.newItem.current.value);
+								this.newItem.current.value = "";
+							}}>
 							<input
 								type="text"
 								className="form-control"

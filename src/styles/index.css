@@ -1,3 +1,14 @@
 /* 
     General Styles
 */
+.done {
+    text-decoration: line-through;
+}
+
+.done:hover {
+    text-decoration: line-through;
+}
+
+/*.delete {
+    text-decoration: none;
+}*/
