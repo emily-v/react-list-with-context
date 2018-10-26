@@ -1,6 +1,7 @@
 const getState = scope => {
 	return {
 		store: {
+			data: "",
 			listOfItems: [
 				{
 					itemText: "Item 1",

@@ -32,6 +32,9 @@ export class Main extends React.Component {
 												: " items remaining"}
 										</div>
 									</div>
+									<h3>
+										<Link to="/demo">Go to fetch demo</Link>
+									</h3>
 								</div>
 							</div>
 						</div>

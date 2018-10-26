@@ -12,7 +12,29 @@ export class Demo extends React.Component {
 				<ul className="list-group">
 					<Context.Consumer>
 						{({ store, actions }) => {
-							return store.demo.map((item, index) => {
+							return (
+								<div>
+									<img
+										src={
+											store.data.posts[1].attachments[2]
+												.images.thumbnail.url
+										}
+										width="150"
+										height="150"
+									/>
+									<img
+										src={
+											store.data.posts[1].attachments[1]
+												.images.thumbnail.url
+										}
+										width="150"
+										height="150"
+									/>
+									<p>{store.data.posts[1].content}</p>
+									{/*would need to apply dangerouslySetInnerHTML for text formatting*/}
+								</div>
+							);
+							/*return store.demo.map((item, index) => {
 								return (
 									<li
 										key={index}
@@ -38,7 +60,7 @@ export class Demo extends React.Component {
 										</button>
 									</li>
 								);
-							});
+							});*/
 						}}
 					</Context.Consumer>
 				</ul>

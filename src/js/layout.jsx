@@ -3,7 +3,7 @@ import { BrowserRouter, Route, Switch } from "react-router-dom";
 import ScrollToTop from "./component/functional/scrollToTop.jsx";
 
 import { Main } from "./views/main.jsx";
-//import { Demo } from "./views/demo.jsx";
+import { Demo } from "./views/demo.jsx";
 //import { Single } from "./views/single.jsx";
 import Store from "./store/appContext.jsx";
 
@@ -18,6 +18,7 @@ export class Layout extends React.Component {
 				<ScrollToTop>
 					<Switch>
 						<Route exact path="/" component={Main} />
+						<Route exact path="/demo" component={Demo} />
 						<Route render={() => <h1>Not found!</h1>} />
 					</Switch>
 				</ScrollToTop>
